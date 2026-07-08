@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Puzzle dengan Gestur Tangan</title>
+
+    <!-- Memuat Font Bubble (Fredoka) dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Memuat Library MediaPipe untuk Pelacakan Tangan -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- LAYAR AWAL (WELCOME SCREEN) -->
+    <div id="start_screen" class="start-screen">
+        <h2>Hallo Friends 👋🏻</h2>
+        <p>Siap untuk bermain Puzzle Cam?</p>
+        <button id="start_btn">Silahkan Aktifkan Kamera 📸</button>
+    </div>
+
+    <!-- Judul di atas tengah -->
+    <h1 class="title-top">PUZZLE CAM</h1>
+
+    <!-- Nama Sisi Kiri -->
+    <div class="name-side name-left">
+        <span>L</span><span>A</span><span>T</span><span>I</span><span>F</span><span>A</span><span>H</span>
+    </div>
+
+    <div class="container">
+        <!-- Video ini akan disembunyikan, kita hanya mengambil gambarnya -->
+        <video id="input_video" autoplay playsinline></video>
+
+        <!-- Canvas adalah tempat utama kita menampilkan hasil kamera dan puzzle -->
+        <canvas id="output_canvas" width="640" height="480"></canvas>
+    </div>
+
+    <!-- Nama Sisi Kanan -->
+    <div class="name-side name-right">
+        <span>A</span><span>D</span><span>I</span><span>S</span><span>T</span><span>Y</span><span>A</span>
+    </div>
+
+    <!-- Menghubungkan logika program -->
+    <script src="script.js"></script>
+</body>
+
+</html>

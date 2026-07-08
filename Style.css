@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a, #ec4899);
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    /* Menggunakan font bubble */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Style untuk judul PUZZLE CAM (Dinaikkan ke atas agar pas) */
+.title-top {
+    position: absolute;
+    top: 15px;
+    /* DIUBAH: Lebih ke atas dari sebelumnya */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 3px 3px 0px #000000;
+    /* Efek shadow tebal khas bubble text */
+    margin: 0;
+    z-index: 10;
+}
+
+/* Mengatur susunan vertikal huruf nama */
+.name-side {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* Membuat teks menyusun ke bawah */
+    align-items: center;
+    font-size: 38px;
+    font-weight: 700;
+    z-index: 10;
+}
+
+/* Posisi dan Warna LATIFAH (Sisi Kiri - Biru dengan Outine Putih) */
+.name-left {
+    left: 12%;
+    color: #1e40af;
+    /* Warna biru sedikit disesuaikan agar kontras */
+    /* EFEK BARU: Outline putih tebal di sekeliling font + bayangan hitam di bawahnya */
+    text-shadow:
+        -2px -2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px 2px 0 #fff,
+        4px 4px 0px #000;
+}
+
+/* Posisi dan Warna ADISTYA (Sisi Kanan - Pink dengan Outline Putih) */
+.name-right {
+    right: 12%;
+    color: #db2777;
+    /* Warna pink sedikit disesuaikan agar kontras */
+    /* EFEK BARU: Outline putih tebal di sekeliling font + bayangan hitam di bawahnya */
+    text-shadow:
+        -2px -2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px 2px 0 #fff,
+        4px 4px 0px #000;
+}
+
+/* Jarak antar huruf vertikal */
+.name-side span {
+    margin: 5px 0;
+}
+
+/* Container Kamera (Diturunkan sedikit agar seimbang) */
+.container {
+    position: relative;
+    margin-top: 50px;
+    /* DIUBAH: Diturunkan agar memberikan jarak dari judul */
+}
+
+#input_video {
+    display: none;
+    /* Disembunyikan karena kita pakai canvas */
+}
+
+#output_canvas {
+    border: 4px solid #ffffff;
+    /* Bingkai putih tebal agar senada dengan tema baru */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    background-color: #000;
+    /* Efek cermin agar gerakan tangan tidak terbalik */
+    transform: scaleX(-1);
+}
+
+/* =========================================
+   STYLE UNTUK LAYAR AWAL & TOMBOL
+   ========================================= */
+.start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.85);
+    /* Latar belakang gelap transparan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    /* Memastikan layar ini menutupi semuanya */
+    text-align: center;
+    backdrop-filter: blur(5px);
+    /* Efek blur estetik pada latar belakang */
+}
+
+.start-screen h2 {
+    font-size: 48px;
+    color: #fff;
+    text-shadow: 3px 3px 0px #ec4899;
+    margin-bottom: 10px;
+}
+
+.start-screen p {
+    font-size: 24px;
+    color: #f8fafc;
+    margin-bottom: 30px;
+}
+
+#start_btn {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 24px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    color: white;
+    border: 4px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#start_btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px #000;
+}
+
+#start_btn:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 0px #000;
+}
